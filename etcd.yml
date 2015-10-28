@@ -7,7 +7,8 @@
     etcd_num_nodes: 3
     etcd_security_group_name: etcd
     etcd_node_prefix: etcd
-    etcd_template: Linux CoreOS alpha 435 64-bit 10GB Disk 
+    # This template name is specific to http://exoscale.ch, replace it
+    etcd_template: Linux CoreOS stable 723 64-bit
     etcd_instance_type: Tiny
 
   pre_tasks:
@@ -15,7 +16,7 @@
       command: curl -w "\n" https://discovery.etcd.io/new
       register: token
     - debug: msg='Etcd token is {{ token.stdout }}'
-    
+
   roles:
     - common
     - etcd
