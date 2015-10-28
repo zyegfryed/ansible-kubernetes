@@ -1,6 +1,6 @@
   - name: Create SSH Key
     local_action:
-      module: cs_sshkeypair
+      module: cloudstack_sshkey
       name: "{{ ssh_key }}"
     register: key
     tags: sshkey
